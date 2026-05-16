@@ -1,5 +1,5 @@
 # ignaring only which i using here, not generic used
 
 .env
-/node_modules
-/dist
+node_modules/
+dist/

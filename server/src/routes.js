@@ -19,9 +19,7 @@ router.use((req, res, next) => {
 });
 
 
-router.use('/auth/request-otp', require(''));
-router.use('/auth/verify-otp', require(''));
-router.use('/auth/me', require(''));
+router.use('/auth', require('./routes/auth.routes'));
 
 
 

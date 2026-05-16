@@ -1,4 +1,4 @@
-const OTP_LENGTH = Number(process.env.OTP_LENGTH) || 6;
+const { OTP_LENGTH } = require("../config/config");
 
 const generateOtp = () => {
     let otp = "";

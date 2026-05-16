@@ -1,7 +1,23 @@
-const { development_db_config, test_db_config, production_db_config } = require("./config");
+const { Sequelize } = require("sequelize");
+const { DATABASE } = require("./config");
+
+const sequelize = new Sequelize(
+  DATABASE.database,
+  DATABASE.username,
+  DATABASE.password,
+  {
+    host: DATABASE.host,
+    port: DATABASE.port,
+    dialect: DATABASE.dialect,
+    logging: DATABASE.logging,
+    timezone: DATABASE.timezone,
+  },
+);
 
 module.exports = {
-  development: development_db_config,
-  test: test_db_config,
-  production: production_db_config,
+  DATABASE,
+  development: DATABASE,
+  test: DATABASE,
+  production: DATABASE,
+  sequelize,
 };

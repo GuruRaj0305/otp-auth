@@ -6,7 +6,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*", // given for all origins, secutiry perspective should only allow specified origins
+    origin: "http://localhost:5173", // Update this to match your frontend URL and port
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"],

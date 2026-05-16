@@ -51,4 +51,22 @@ router.get("/me", async (req, res, next) => {
   }
 });
 
+router.post("/logout", async (req, res, next) => {
+  try {
+    res.clearCookie("accessToken", {
+      path: ACCESS_TOKEN_COOKIE_OPTIONS.path,
+      sameSite: ACCESS_TOKEN_COOKIE_OPTIONS.sameSite,
+      secure: ACCESS_TOKEN_COOKIE_OPTIONS.secure,
+      httpOnly: ACCESS_TOKEN_COOKIE_OPTIONS.httpOnly,
+    });
+
+    return res.status(200).json({
+      success: true,
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    return next(error);
+  }
+});
+
 module.exports = router;

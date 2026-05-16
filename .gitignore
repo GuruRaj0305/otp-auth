@@ -1,1 +1,5 @@
-.env // ignaring only which i using here, not generic used
+# ignaring only which i using here, not generic used
+
+.env
+/node_modules
+/dist

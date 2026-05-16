@@ -1,6 +1,5 @@
 const express = require("express");
 const cors = require("cors");
-const { ALLOWED_CORS_ORIGINS } = require("../config/config");
 
 const app = express();
 
